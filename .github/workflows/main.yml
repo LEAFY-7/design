@@ -19,7 +19,12 @@ jobs:
       # 디자인 파일 변환 후 생성된 파일도 push해서 figma 브랜치로 병합하는 PR을 생성
       - name: Run Token Transformer
         run: |
-            node tt.config.js
+            npx token-transformer tokens.json ./src/global.json global
+            git config --global user.name "Sleepingoff" 
+            git config --global user.email "justjh30@gmail.com"
+            git add .
+            git commit -m '피그마 디자인 파일 변환'
+            git push
         env: 
             GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       - name: Create Pull Request
