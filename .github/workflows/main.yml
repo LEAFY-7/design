@@ -1,13 +1,13 @@
-name: Create PR from design to main
+name: Create PR from main to figma
 
-
-# design 브랜치의 tokens.json 파일에 대한 push 감지
+# main 브랜치의 tokens.json 파일에 대한 push 감지
 on:
   push:
     branches:
       - main
     paths:
       - 'tokens.json'
+      
 jobs:
   createPullRequest:
     runs-on: ubuntu-latest
@@ -16,7 +16,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      # 디자인 파일 변환 후 생성된 파일도 push해서 main 브랜치로 병합하는 PR을 생성
+      # 디자인 파일 변환 후 생성된 파일도 push해서 figma 브랜치로 병합하는 PR을 생성
       - name: Run Token Transformer
         run: |
             npx token-transformer tokens.json global.json global
