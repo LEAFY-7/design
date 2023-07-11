@@ -20,11 +20,6 @@ jobs:
       - name: Run Token Transformer
         run: |
             node tt.config.js
-            git config --global user.name "Sleepingoff" 
-            git config --global user.email "justjh30@gmail.com"
-            git add .
-            git commit -m '피그마 디자인 파일 변환'
-            git push
         env: 
             GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       - name: Create Pull Request
