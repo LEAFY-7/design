@@ -25,7 +25,7 @@ fs.readFile("tokens.json", "utf8", (err, data) => {
     // 변환 작업
     const resolved = transformTokens(
       tokens, // 변환할 파일
-      key === "font" || key === "border" ? ["global", key] : tokenKeys, // 참조 대상
+      key === "typography" || key === "shape" ? ["global", key] : tokenKeys, // 참조 대상
       [...tokenKeys].filter((k) => k !== key), // 추출 제외 대상
       transformerOptions // 변환 옵션
     );
