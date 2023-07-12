@@ -3,7 +3,7 @@ const path = require("path");
 const { transformTokens } = require("token-transformer");
 
 // 추출 대상 파일 경로
-const filePath = "src/tokens";
+const filePath = "tokens";
 const dir = path.join(__dirname, filePath);
 // 만약 없다면 생성
 if (!fs.existsSync(dir)) {
